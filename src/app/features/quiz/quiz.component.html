@@ -1,0 +1,16 @@
+<header>Quiz</header>
+<main>
+    <app-general [model]="form.controls[0]" *ngIf="isCurrentStep(0)">
+    </app-general>
+    <app-happiness [model]="form.controls[1]" *ngIf="isCurrentStep(1)">
+    </app-happiness>
+    <app-best-word [model]="form.controls[2]" *ngIf="isCurrentStep(2)">
+    </app-best-word>
+</main>
+<footer>
+    <button class="btn btn-primary left" (click)="previousStep()" [disabled]="!hasPreviousStep">Previous</button>
+    <button class="btn btn-default right" (click)="nextStep()" [disabled]="!hasNextStep">Next</button>
+</footer>
+<p>
+    {{ form?.value | json }}
+</p>

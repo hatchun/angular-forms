@@ -1,0 +1,10 @@
+<h1>General</h1>
+<form [formGroup]="model" (ngSubmit)="submit()">
+  <ul [formControlRef]="model" appGroupError>
+    <li *ngFor="let item of model.controls">
+      <div [formGroup]="item">
+        <label><input type="checkbox" formControlName="selected" />{{item.controls.name.value}}</label>
+      </div>
+    </li>
+  </ul>
+</form>
